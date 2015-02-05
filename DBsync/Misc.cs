@@ -7,8 +7,22 @@ using System.Threading.Tasks;
 
 namespace DBsync
 {
-    static class Misc
+    public static class Misc
     {
-        
+        public static string ToScript(DBclass input)
+        {
+            string result = "PObject\n{\n";
+
+            result += "\tLocName\t\"" + input.LocName + "\"\n";
+            result += "\tName\t\"" + input.Name + "\"\n";
+            result += "\tParent\t\"" + input.Parent + "\"\n";
+            result += "\tPioneer\t\"" + input.PioneerName + "\"\n";
+            result += "\tDate\t\"" + input.Date.ToString("yyyy.mm.dd HH:mm:ss") + "\"\n";
+            result += "\tDescr\t\"" + input.Descr + "\"\n";
+
+            result += "}\n";
+
+            return result;
+        }
     }
 }

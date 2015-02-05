@@ -23,22 +23,28 @@ namespace DBsync
             //values.Add("DATE", String.Format("{0:Y.m.d H:i:s}", DateTime.UtcNow));
             //values.Add("DESCR", "{7D9FC518-6E03-4C52-B34A-EF0C7328F796}");
             values.Add("MODE", "GET");
-            values.Add("ID", "1");
+            //values.Add("ID", "1");
 
-            DBclass data;
+            List<DBclass> data = new List<DBclass>();
 
             using(var client = new WebClient())
             {
-                byte[] contents = client.UploadValues("http://localhost:8080/index.php", values);
+                byte[] contents = client.UploadValues("http://localhost:8080/SE_db_API.php", values);
 
                 var serializer = new JavaScriptSerializer();
-
-                data = serializer.Deserialize<DBclass>(Encoding.ASCII.GetString(contents));
-                //data = Encoding.ASCII.GetString(contents);
+                string response = Encoding.ASCII.GetString(contents);
+                foreach (string obj in response.Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    data.Add(serializer.Deserialize<DBclass>(obj));
+                }
+                //data = serializer.Deserialize<DBclass>(Encoding.ASCII.GetString(contents));
+                
             }
 
-            Console.WriteLine(data);
-            System.IO.File.WriteAllText("result.html", data.ToString());
+            StringBuilder sb = new StringBuilder();
+            foreach (DBclass d in data) sb.AppendLine(Misc.ToScript(d));
+
+            System.IO.File.WriteAllText("result.log", sb.ToString());
         }
     }
 }

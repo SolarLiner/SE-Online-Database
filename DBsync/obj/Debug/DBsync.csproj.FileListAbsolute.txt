@@ -4,3 +4,9 @@ E:\Nathan\Projects\C#\SpaceEngine\SE_DB_Sync\DBsync\bin\Debug\DBsync.pdb
 E:\Nathan\Projects\C#\SpaceEngine\SE_DB_Sync\DBsync\obj\Debug\DBsync.csprojResolveAssemblyReference.cache
 E:\Nathan\Projects\C#\SpaceEngine\SE_DB_Sync\DBsync\obj\Debug\DBsync.exe
 E:\Nathan\Projects\C#\SpaceEngine\SE_DB_Sync\DBsync\obj\Debug\DBsync.pdb
+E:\Nathan\Projects\repo\SE-Online-Database\DBsync\bin\Debug\DBsync.exe.config
+E:\Nathan\Projects\repo\SE-Online-Database\DBsync\obj\Debug\DBsync.exe
+E:\Nathan\Projects\repo\SE-Online-Database\DBsync\obj\Debug\DBsync.pdb
+E:\Nathan\Projects\repo\SE-Online-Database\DBsync\bin\Debug\DBsync.exe
+E:\Nathan\Projects\repo\SE-Online-Database\DBsync\bin\Debug\DBsync.pdb
+E:\Nathan\Projects\repo\SE-Online-Database\DBsync\obj\Debug\DBsync.csprojResolveAssemblyReference.cache

@@ -53,12 +53,7 @@ if(isset($_POST['MODE']))
 		{
 			if($stmt=$mysqli->query("SELECT * FROM objects"))
 			{
-				$stmt->execute();
-				$stmt->store_result();
-				$row = array();
-				$stmt->bind_result($row['Name'], $row['LocName'], $row['PioneerName'], $row['Parent'], $row['Date'], $row['Descr'], $row['ObjectID']);
-				
-				while($stmt->fetch())
+				while($stmt->fetch_assoc())
 				{
 					echo json_encode($row);
 				}
